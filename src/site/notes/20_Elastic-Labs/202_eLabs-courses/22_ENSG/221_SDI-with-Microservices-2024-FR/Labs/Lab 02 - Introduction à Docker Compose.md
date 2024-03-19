@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/20-elastic-labs/202-e-labs-courses/22-ensg/221-sdi-with-microservices-2024-fr/labs/lab-02-introduction-a-docker-compose/"}
+{"dg-publish":true,"permalink":"/20-elastic-labs/202-e-labs-courses/22-ensg/221-sdi-with-microservices-2024-fr/labs/lab-02-introduction-a-docker-compose/","noteIcon":""}
 ---
 
 
