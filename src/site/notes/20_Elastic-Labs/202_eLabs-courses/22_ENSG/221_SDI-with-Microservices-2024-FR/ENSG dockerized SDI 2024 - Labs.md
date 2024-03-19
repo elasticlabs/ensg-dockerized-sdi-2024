@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/20-elastic-labs/202-e-labs-courses/22-ensg/221-sdi-with-microservices-2024-fr/ensg-dockerized-sdi-2024-labs/","tags":["gardenEntry"]}
+{"dg-publish":true,"permalink":"/20-elastic-labs/202-e-labs-courses/22-ensg/221-sdi-with-microservices-2024-fr/ensg-dockerized-sdi-2024-labs/","tags":["gardenEntry"],"noteIcon":""}
 ---
 
 
@@ -18,7 +18,8 @@
 ## Module 3 : Configuration de notre IDG
 
 - Geoserver - Configuration et extensions
-- Création de basemaps dans geoserver
+- Création de basemaps RasterMarine dans geoserver
+- Création de rendus cartoraphiques WMS avec geoserver
 - Création de basemaps en vecteurs tuilés avec PostGIS
 
 ## Module 4 : Injection des données et publication de l'application
