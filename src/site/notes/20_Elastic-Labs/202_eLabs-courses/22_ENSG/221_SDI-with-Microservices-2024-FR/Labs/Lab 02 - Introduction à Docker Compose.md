@@ -3,7 +3,7 @@
 ---
 
 Docker compose permet d'organiser les services, réseaux, ressources (configuration, données, etc.) d'une pile d'applications de manière déclarative. 
-p
+
 Commençons par un cas d'usage très simple : portainer. 
 
 Créez un dossier dédié à vos travaux Docker dans votre répertoire personnel.
@@ -18,6 +18,8 @@ Créez un répertoire dédié à votre 1ère app, ou clonez votre dépôt github
 RDV sur https://github.com/docker/awesome-compose afin de chercher des points de départ fiables car produits par les équipes développant Docker. 
 
 Cherchez l'exemple fourni pour portainer. : (rép. https://github.com/docker/awesome-compose/blob/master/portainer/compose.yaml) et intégrez le dans un fichier docker-compose.yaml
+
+**Exemple de bloc** :
 
 ```
 services:
@@ -39,17 +41,24 @@ volumes:
 Tentez de construire la pile avec une commande `docker compose build`
 
 - [?] Que se passe-t-il? pourquoi? 
-- [?] Quel opérateur pour instancier portainer? 
-- [?] Que faut-il ajouter pour la greffe prenne? 
+- [?] Quelle commande pour instancier portainer?  
 - [?] Quel fichier final fonctionne-t-il? 
 
 Instanciez la pile et connectez-vous à Portainer via le navigateur Firefox 
+
+### Ajout d'un réseau 
+
+Ajoutons maintenant un réseau externe à notre pile. Nous avons créé plus haut le réseau ``revproxy_apps``, qui doit-être ajouté comme réseau externe dans notre pile. 
+
+
+> [!NOTE] Configuration de docker compose
+> Vous trouverez beaucoup de documentation sur le site officiel de docker au sujet de compose : dans le cas présent du réseau, ça se trouve par ici : https://docs.docker.com/compose/networking/
 
 ### Ajout de services
 
 Avançons un peu dans la construction de notre IDG. 
 
-Ajoutez maintenant un moteur de BDD et son interface d'administration : PostreSQL et Pgadmin. RDV sur https://github.com/docker/awesome-compose afin de chercher des points de départ fiables car produits par les équipes développant Docker. 
+Ajoutez maintenant un moteur de BDD et son interface d'administration : PostgreSQL et Pgadmin. RDV sur https://github.com/docker/awesome-compose afin de chercher des points de départ fiables car produits par les équipes développant Docker. 
 
 Ajoutez pgadmin et postgis à votre pile depuis les sources fournies dans ce dépôt. 
 
@@ -57,7 +66,7 @@ Ajoutez pgadmin et postgis à votre pile depuis les sources fournies dans ce dé
 	- renseigner un fichier `.env` dans la racine du projet, contenant l'ensemble des variables. 
 	- créer un répertoire spécifique à un COTS (e.g. postGIS) et référencer un fichier d'environnement, au niveau du `docker-compose.yaml` (opérateur `env_file` pour le fichier d'environnement)
 
-Postgresql requiert à minima les variables suivantes : 
+Postgresql requiert à minima les variables suivantes, à customiser par vos soins : 
 
 ```
 POSTGRES_USER=yourUser
@@ -67,7 +76,7 @@ PGADMIN_MAIL=your@email.com
 PGADMIN_PW=changeit
 ```
 
-Créez le fichier et modifiez ces variables à votre convenance, puis renseignez le fichier `docker-compose.yaml` avec les informations trouvées sur le dépôt GIT. 
+Créez ou éditez dans VSCode le fichier ``.env`` et modifiez ces variables à votre convenance, puis renseignez le fichier `docker-compose.yaml` avec les informations trouvées sur le dépôt GIT. 
 
 - [?] Quels problèmes pose ce déploiement à notre cas d'usage? 
 	- Du point de vue des accès au SI?
